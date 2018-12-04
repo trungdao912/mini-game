@@ -3,6 +3,7 @@
 <table>
     <thead>
         <tr>
+            <th></th>
             <% playerName.forEach((name) => { %>
             <th>
                 <%= name %>
@@ -12,10 +13,18 @@
     </thead>
 
     <tbody id="record">
-        <% playerScore.forEach((scores) => { %>
+        <tr>
+            <td>Sum of Score</td>
+            <td id="sum1"></td>
+            <td id="sum2"></td>
+            <td id="sum3"></td>
+            <td id="sum4"></td>
+        </tr>
+        <% playerScore.forEach((scores, index) => { %>
             <tr>
+                <td>Round <%= index + 1 %></td>
                 <% scores.forEach((score) => { %>
-                    <td><input type="number" value="<%= score %>" class="base"></td>
+                    <td><input type="number" value="<%= score %>" class="added added-<%= index + 1 %>"></td>
                 <% }) %>
             </tr>
         <% }) %>
@@ -24,6 +33,6 @@
 </table>
 
 <button class="btn btn-add" id="round">ADD ROUND</button>
-<button class="btn btn-save" id="save">SAVE</button>
+<button id="save">SAVE</button>
 
 <% include ./partials/footer %>

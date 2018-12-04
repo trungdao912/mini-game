@@ -47,8 +47,6 @@ app.post('/games/:id', (req, res) => {
     scoreModel.findByIdAndUpdate(id, {playerScore: data} ,(err, data) => {
         if (err) {
             console.log(err);
-        } else {
-            console.log(data);
         }
     })
 })
