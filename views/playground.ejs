@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+
+<table>
+    <thead>
+        <tr>
+            <% playerName.forEach((name) => { %>
+            <th>
+                <%= name %>
+            </th>
+            <% }) %> %>
+        </tr>
+    </thead>
+
+    <tbody id="record">
+        <% playerScore.forEach((scores) => { %>
+            <tr>
+                <% scores.forEach((score) => { %>
+                    <td><input type="number" value="<%= score %>" class="base"></td>
+                <% }) %>
+            </tr>
+        <% }) %>
+    </tbody>
+
+</table>
+
+<button class="btn btn-add" id="round">ADD ROUND</button>
+<button class="btn btn-save" id="save">SAVE</button>
+
+<% include ./partials/footer %>
